@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Velt Bar — Mobile Mocktail & Cocktail Bar</title>
+  <meta name="description" content="The Velt Bar is a mobile mocktail and cocktail bar, crafting considered pours for weddings, brands and private events.">
+  <link rel="icon" href="media/logo-no-name.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="The Velt Bar"><img src="media/logo-no-name.png" alt=""></a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#story">Story</a>
+      <a href="#shop">Shop</a>
+      <a href="#enquire" class="nav__cta">Enquire</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO: pinned, drives the 3D shaker pour -->
+    <section class="hero" id="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">Mobile mocktail &amp; cocktail bar</p>
+        <h1><span class="line"><span>The art of</span></span> <span class="line"><span><em>the pour</em></span></span></h1>
+        <p class="hero__sub">Considered drinks, poured wherever you gather.</p>
+      </div>
+      <div class="hero__scroll"><span>Scroll</span><i></i></div>
+      <p class="hero__caption" id="caption">Shaken, never rushed.</p>
+    </section>
+
+    <!-- MENU: glass sits to the right (3D), list on the left -->
+    <section class="menu" id="menu">
+      <div class="menu__inner">
+        <p class="eyebrow reveal">The signature menu</p>
+        <h2 class="reveal">Four ways to<br><em>raise a glass</em></h2>
+        <ul class="drinks" id="drinks">
+          <li><button class="drink is-active" data-color="#e9742b">
+            <span class="drink__tag">Cocktail</span><span class="drink__name">Velt Spritz</span>
+            <span class="drink__desc">Bitter orange, prosecco, rosemary, soda.</span></button></li>
+          <li><button class="drink" data-color="#b5d385">
+            <span class="drink__tag">Mocktail</span><span class="drink__name">Garden Collins</span>
+            <span class="drink__desc">Cucumber, elderflower, lime, tonic.</span></button></li>
+          <li><button class="drink" data-color="#4a2c1a">
+            <span class="drink__tag">Cocktail</span><span class="drink__name">Midnight Espresso</span>
+            <span class="drink__desc">Vodka, cold brew, coffee liqueur, vanilla.</span></button></li>
+          <li><button class="drink" data-color="#c94b6b">
+            <span class="drink__tag">Mocktail</span><span class="drink__name">Rose &amp; Berry</span>
+            <span class="drink__desc">Raspberry, rosewater, lemon, sparkling.</span></button></li>
+        </ul>
+        <p class="menu__note reveal">Menus are tailored to your event. Ask about bespoke creations.</p>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+      <div class="story__grid">
+        <div class="story__text">
+          <p class="eyebrow reveal">Our story</p>
+          <h2 class="reveal">Bar-quality drinks,<br><em>brought to you</em></h2>
+          <p class="reveal">The Velt Bar began with a simple idea: the best drink of the night shouldn't be tied to a venue. We bring a beautifully dressed bar, fresh ingredients and a calm, attentive hand to weddings, launches and private gatherings.</p>
+          <p class="reveal">Every menu is built around you and your guests, with cocktails for those who want them and equally considered mocktails for those who don't.</p>
+          <ul class="stats reveal">
+            <li><b>Mobile</b><span>We come to you</span></li>
+            <li><b>Bespoke</b><span>Menus made for the event</span></li>
+            <li><b>Zero-proof</b><span>Crafted with equal care</span></li>
+          </ul>
+        </div>
+        <div class="story__media">
+          <div class="frame"><video src="media/display-table.MOV" muted loop playsinline autoplay preload="metadata"></video></div>
+        </div>
+      </div>
+      <div class="story__wide frame reveal">
+        <video data-lazy="media/display-table-2.MOV" muted loop playsinline preload="none"></video>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="shop" id="shop">
+      <p class="eyebrow reveal">The shop</p>
+      <h2 class="reveal">Packaged cocktails,<br><em>coming soon</em></h2>
+      <p class="shop__lead reveal">Our signatures, bottled for your own bar cart. Join the list to hear first.</p>
+      <form class="waitlist reveal" action="mailto:hello@example.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit">Notify me</button>
+      </form>
+    </section>
+
+    <!-- ENQUIRE / FOOTER -->
+    <footer class="foot" id="enquire">
+      <img class="foot__logo reveal" src="media/logo-with-name.png" alt="The Velt Bar — Mobile Mocktail & Cocktail Bar">
+      <a class="foot__cta reveal" href="mailto:hello@example.com?subject=Event%20enquiry">Enquire about your event</a>
+      <p class="foot__small">© <span id="yr"></span> The Velt Bar</p>
+    </footer>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
